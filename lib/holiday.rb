@@ -75,6 +75,7 @@ def all_supplies_in_holidays(holiday_hash)
   #   Fourth Of July: Fireworks, BBQ
   # etc.
   holiday_hash.each do |season, holiday|
+<<<<<<< HEAD
     puts "#{season.capitalize}:"
     holiday.each do |name, supplies|
       name_string = "#{name}"
@@ -85,6 +86,20 @@ def all_supplies_in_holidays(holiday_hash)
     #  end
       #new_name_string = "#{capitalized_name_array.join(" ")}"
       puts "  #{cap_name_string}: #{supplies.join(", ")}"
+=======
+    holiday.each do |name, supplies|
+      name_string = "#{name}"
+      name_array = name_string.split("_")
+      capitalized_name_array = []
+      #capitalized_name_array << name_array.collect{|string| string.capitalize}
+      binding.pry
+      name_array.each do |element|
+        capitalized_name_array << element.capitalize
+      end
+      new_name_string = "#{capitalized_name_array.join(" ")}"
+      puts "#{season.capitalize}:"
+      puts "  #{new_name_string.capitalize}: #{supplies.join(", ")}"
+>>>>>>> 665476adc66045ca0e7b7da5a612ff6688597617
     end
   end
 end
